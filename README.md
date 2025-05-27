@@ -1,1 +1,1 @@
-# SQL_agent
+# AI SQL Agent
