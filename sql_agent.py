@@ -72,7 +72,10 @@ def generate_response(input_text):
             config,
             stream_mode="values",
     ):
+        # Print all outputs
         # yield step["messages"][-1]
+
+        # Print only the relevant content
         if step["messages"][-1].type != 'human':
             try:
                 for sentence in step["messages"][-1].content[0]['text'].split("/n"):
@@ -81,7 +84,7 @@ def generate_response(input_text):
                 for sentence in step["messages"][-1].content.split("/n"):
                     yield sentence.replace("```","") + "  "
 
-    # Output only the last message
+    # Print only the last message
     # response = agent_executor.invoke(
     #         {"messages": [HumanMessage(content=f"{input_text}")]},
     #         config
@@ -89,7 +92,7 @@ def generate_response(input_text):
 
     # yield response["messages"][-1].content
         
-st.title("AI SQL Agent")
+st.title("AI SQL Agent (Bike Store Data as Example")
 st.caption("Powered by Amazon Nova Pro")
 
 # Initialize chat history
