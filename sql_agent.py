@@ -92,8 +92,11 @@ def generate_response(input_text):
 
     # yield response["messages"][-1].content
         
-st.title("AI SQL Agent (Bike Store Data as Example")
+url = "https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database"
+st.title("AI SQL Agent")
 st.caption("Powered by Amazon Nova Pro")
+st.subheader("[Bike Store Relational Database as Example](%s)" %url)
+st.image("database_diagram.png")
 
 # Initialize chat history
 if "messages" not in st.session_state:
